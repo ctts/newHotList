@@ -24,9 +24,9 @@ node项目地址：https://github.com/ctts/TopSearch
 
 ## 界面展示
 
- ![image](https://github.com/ctts/newHotList/raw/master/images/show1.jpg)
- ![image](https://github.com/ctts/newHotList/raw/master/images/show2.jpg)
- ![image](https://github.com/ctts/newHotList/raw/master/images/show3.jpg)
- ![image](https://github.com/ctts/newHotList/raw/master/images/show4.jpg)
- ![image](https://github.com/ctts/newHotList/raw/master/images/show5.jpg)
- ![image](https://github.com/ctts/newHotList/raw/master/images/show6.jpg)
+ ![image](https://github.com/ctts/newHotList/raw/master/src/assets/images/show1.jpg)
+ ![image](https://github.com/ctts/newHotList/raw/master/src/assets/images/show2.jpg)
+ ![image](https://github.com/ctts/newHotList/raw/master/src/assets/images/show3.jpg)
+ ![image](https://github.com/ctts/newHotList/raw/master/src/assets/images/show4.jpg)
+ ![image](https://github.com/ctts/newHotList/raw/master/src/assets/images/show5.jpg)
+ ![image](https://github.com/ctts/newHotList/raw/master/src/assets/images/show6.jpg)
