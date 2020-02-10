@@ -60,11 +60,15 @@ export default {
       if (initdata.type.isLogin) {
         // 获取用户订阅
         await getUserPreferWeb(initdata.userInfo.username).then(val => {
-          prefer = val.data.webs
+          if (val.data) {
+            prefer = val.data.webs
+          } else {
+            return
+          }
         })
       }
       // 获取所有数据
-      let all = await getAllWeb()
+      let all = await getAllWeb(initdata.userInfo.username)
       all.data.forEach((val) => {
         for (let obj of prefer) {
           // 将订阅的web放入minelist
