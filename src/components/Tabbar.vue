@@ -139,6 +139,7 @@ export default {
   text-align: center;
   position: relative;
   z-index: 999;
+  max-width: 600px;
 
   .center(row);
   justify-content: space-between;

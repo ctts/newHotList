@@ -99,41 +99,35 @@ export default {
 <style lang="less" scoped>
 .container {
   position: absolute;
+  height: 80vh;
   left: 0;
   right: 0;
-  top: 0;
-  bottom: 0;
   margin: 0 auto;
 }
 .head-img {
   width: 10rem;
   height: 10rem;
 }
-
 img {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
 }
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
 .el-form-item {
   margin: 2.5rem 0.2rem;
 }
-
 .el-button {
   width: 10rem;
   margin-top: 1rem;

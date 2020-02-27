@@ -52,6 +52,7 @@ export default {
   background: #409eff;
   color: #fff;
   width: 100%;
+  max-width: 600px;
   height: 5rem;
   justify-content: center;
   align-items: center;

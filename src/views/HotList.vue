@@ -97,8 +97,7 @@ export default {
     // 获取数据
     getHotList () {
       getHotData(this.webdata.webname).then(res => {
-        this.hotlist = res.data
-        console.log(res.data)
+        this.hotlist = res.data.sort((a, b) => a.infoNumber - b.infoNumber)
       })
     },
     // 取得图片路径
@@ -130,7 +129,9 @@ header {
     align-items: center;
     justify-content: center;
     img {
-      max-height: 6rem;
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
     }
   }
   .el-button {
@@ -139,7 +140,7 @@ header {
 }
 
 .hotlist {
-  padding: 0.8rem;
+  padding: 1.6rem;
   .list-item {
     display: flex;
     align-items: center;

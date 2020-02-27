@@ -38,7 +38,7 @@ export default {
     querySearch (queryString, callback) {
       let restaurants = this.restaurants
       let result = queryString ? restaurants.filter(this.createFilter(queryString)) : restaurants
-      console.log(result)
+      // console.log(result)
       callback(result)
     },
     createFilter (queryString) {
@@ -61,8 +61,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .inline-input {
   width: 100%;
+  padding: 0.8rem;
 }
 </style>

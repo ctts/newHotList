@@ -7,5 +7,5 @@ module.exports = {
       }
     }
   },
-  publicPath: process.env.NODE_ENV === 'production' ? 'http://localhost:3000/' : '/'
+  publicPath: process.env.NODE_ENV === 'production' ? process.env.VUE_APP_PATH : '/'
 }

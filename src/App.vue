@@ -110,16 +110,22 @@ export default {
   }
 }
 </script>
-<style lang="less" scoped>
+<style lang="less">
 #app {
+  position: relative;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin: 4.9rem 0;
+  max-width: 600px;
 }
 
 .icon {
   font-size: 2.5rem;
+}
+
+.tabbar {
+  position: absolute;
 }
 </style>

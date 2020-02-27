@@ -13,6 +13,7 @@
           class="hot-content"
           v-for="hotdata of item.hotdata"
           :key="hotdata._id"
+          @click="handleClick(hotdata)"
         >
           <img :src="getPath(item.web.weblogo)">
           <div class="text">
@@ -66,6 +67,9 @@ export default {
           });
         })
       }
+    },
+    handleClick(hotdata){
+      window.location.href = hotdata.infoURL
     }
   }
 }
