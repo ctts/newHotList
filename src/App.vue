@@ -105,8 +105,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin: 4.9rem auto;
+  padding: 4.8rem 0;
   max-width: 600px;
+  margin: 0 auto;
 }
 
 .icon {

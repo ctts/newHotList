@@ -27,7 +27,7 @@
       type="success"
       plain
       @click="login"
-    >登录/注册</el-button>
+    >登录 / 注册</el-button>
   </div>
 </template>
 
@@ -105,13 +105,11 @@ export default {
   margin: 0 auto;
 }
 .head-img {
+  img{
+    object-fit: contain;
+  }
   width: 10rem;
   height: 10rem;
-}
-img {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
 }
 .container {
   display: flex;
@@ -126,10 +124,10 @@ img {
   justify-content: center;
 }
 .el-form-item {
-  margin: 2.5rem 0.2rem;
+  margin: 2rem 0;
 }
+.el-input,
 .el-button {
-  width: 10rem;
-  margin-top: 1rem;
+  width: 20rem;
 }
 </style>
