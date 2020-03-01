@@ -10,6 +10,7 @@
           v-for="item of historyList"
           :key="item._id"
           :href="item.infoURL"
+          target="_blank"
         >
           <img
             :src="getPath(item.weblogo)"

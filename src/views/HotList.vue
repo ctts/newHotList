@@ -25,6 +25,7 @@
         :key="item._id"
         @click="handlePostHistory(item)"
         :href="item.infoURL"
+        target="_blank"
       >
         <div class="number">{{getNumber(item.infoNumber)}}</div>
         <div class="content">{{item.infoContent}}</div>

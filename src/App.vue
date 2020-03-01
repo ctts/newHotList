@@ -62,7 +62,6 @@
 <script>
 import commonHead from './components/CommonHead'
 import tabbar from './components/Tabbar'
-// import BScroll from 'better-scroll'
 export default {
   name: 'app',
   data () {
@@ -89,17 +88,6 @@ export default {
     commonHead,
     tabbar
   },
-  mounted () {
-    // this.$nextTick(() => {
-    //   this.scroll = new BScroll(this.$refs.wrapper, {
-    //     scrollY: true,
-    //     scrollX: false,
-    //     mouseWheel: true,
-    //     click: true,
-    //     taps: true
-    //   })
-    // })
-  },
   watch: {
     '$route': {
       handler () {
@@ -117,7 +105,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin: 4.9rem 0;
+  margin: 4.9rem auto;
   max-width: 600px;
 }
 
@@ -125,7 +113,4 @@ export default {
   font-size: 2.5rem;
 }
 
-.tabbar {
-  position: absolute;
-}
 </style>

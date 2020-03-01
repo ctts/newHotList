@@ -2,6 +2,7 @@
   <div
     class="contaienr"
     :style="`height:${ct_height};background:${ct_background};padding:${ct_padding_column} 0;font-size:${fontSize}`"
+    v-show="tabbarFlag"
   >
     <div
       class="tab-item"
@@ -75,7 +76,12 @@ export default {
     }
   },
   data () {
+    let realScreenHeight = document.documentElement.clientHeight
+    let screenHeight = document.documentElement.clientHeight
     return {
+      realScreenHeight,
+      screenHeight,
+      tabbarFlag: true,
       t_tabs: JSON.parse(JSON.stringify(this.tabs)),
       zoom: 'zoom'
     }
@@ -100,8 +106,31 @@ export default {
         }
       }
     }
+    // 解决移动端fixed布局失效
+    const that = this
+    if (!this.mediaQueries()) {
+      window.onresize = () => {
+        return (() => {
+          that.screenHeight = document.documentElement.clientHeight
+        })()
+      }
+    }
   },
   methods: {
+    // 媒体查询
+    // return: true 是pc ， false 是移动设备
+    mediaQueries () {
+      var userAgentInfo = navigator.userAgent
+      var Agents = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod']
+      var flag = true
+      for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+          flag = false
+          break
+        }
+      }
+      return flag
+    },
     // 状态改变事件
     changeState (tabName) {
       this.t_tabs.forEach((tab, index) => {
@@ -123,6 +152,16 @@ export default {
         this.$router.replace('/')
       }
     },
+  },
+  watch: {
+    // 获取设备高度
+    screenHeight: {
+      handler (val) {
+        this.screenHeight = val
+        this.tabbarFlag = this.screenHeight >= this.realScreenHeight
+      },
+      immediate: true
+    }
   }
 }
 </script>
@@ -145,8 +184,7 @@ export default {
   justify-content: space-between;
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   z-index: 999;
 }
 

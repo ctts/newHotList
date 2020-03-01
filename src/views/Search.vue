@@ -69,7 +69,7 @@ export default {
       }
     },
     handleClick(hotdata){
-      window.location.href = hotdata.infoURL
+      window.open(hotdata.infoURL)
     }
   }
 }
