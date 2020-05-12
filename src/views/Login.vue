@@ -72,6 +72,7 @@ export default {
         .then(res => {
           if (res.data.result.status === 0) {
             console.log('密码错误或帐号已被注册')
+            alert('密码错误或帐号已被注册')
             // this.$toast.bottom('密码错误或帐号已被注册')
           } else {
             // console.log(res)

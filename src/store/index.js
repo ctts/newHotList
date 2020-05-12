@@ -17,7 +17,11 @@ var store = {
     return this.data
   },
   set state(val) {
-    window.localStorage.setItem('store', JSON.stringify(this.data))
+    console.log(val);
+    localStorage.setItem('store', JSON.stringify(val))
+    if(val.userInfo){
+      localStorage.setItem('token', val.userInfo.token)
+    }
   },
   amendType(obj) {
     let state = this.data
@@ -35,7 +39,6 @@ var store = {
   },
   // 设置个人信息
   setUserInfo(obj) {
-    console.log(obj);
     if (obj.userimg) {
       let http = new RegExp('http').test(obj.userimg)
       if (!http) {

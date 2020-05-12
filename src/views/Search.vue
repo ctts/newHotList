@@ -68,7 +68,7 @@ export default {
         })
       }
     },
-    handleClick(hotdata){
+    handleClick (hotdata) {
       window.open(hotdata.infoURL)
     }
   }
@@ -93,6 +93,11 @@ export default {
 .hot-item {
   padding: 1rem;
   border-bottom: 3px solid #eeeeee;
+
+  &:last-child {
+    border-bottom: none;
+  }
+  
   img {
     max-width: 4rem;
     margin-right: 1rem;

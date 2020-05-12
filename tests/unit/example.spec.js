@@ -1,13 +1,26 @@
-// import { expect } from 'chai'
-import { shallowMount } from '@vue/test-utils'
-import SearchInput from '../../src/views/components/SearchInput.vue'
+import { expect } from 'chai'
+import { mount } from '@vue/test-utils'
+import Login from '../../src/views/Login.vue'
+import '@/plugins/element.js'
+import '@/store/index.js'
 
-describe('SearchInput.vue', () => {
+describe('Login.vue', () => {
   it('测试查看', () => {
     // const msg = 'new message'
-    const wrapper = shallowMount(SearchInput)
-    console.log(wrapper.vm)
-    console.log()
-    // expect(wrapper.text()).to.include(msg)
+    const wrapper = mount(Login, {
+      data(){
+        return{
+          userdata: {
+            username: 'test',
+            password: '123456',
+            userimg: ''
+          },
+        }
+      }
+    })
+    setTimeout(() => {
+      console.log(wrapper.vm.isSuccess)
+      expect(wrapper.vm.isSuccess).toBe(false)
+    }, 2000);
   })
 })

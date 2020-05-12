@@ -106,6 +106,10 @@ export default {
   flex-direction: column;
   padding: 0.8rem;
   border-bottom: 6px solid #f6f6f6;
+
+  &:last-child {
+    border-bottom: none;
+  }
   .head-name {
     align-self: flex-start;
     height: 3rem;

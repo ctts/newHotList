@@ -98,14 +98,7 @@ export default {
       }
     })
     // 优先判断当前路由是否和routerlink的值相同
-    if (this.$route.name) {
-      let name = this.$route.path
-      for (let obj of this.tabs) {
-        if (obj.routerLink === name) {
-          this.changeState(obj.name)
-        }
-      }
-    }
+    this.showWhich()
     // 解决移动端fixed布局失效
     const that = this
     if (!this.mediaQueries()) {
@@ -152,6 +145,16 @@ export default {
         this.$router.replace('/')
       }
     },
+    showWhich () {
+      if (this.$route.name) {
+        let name = this.$route.path
+        for (let obj of this.tabs) {
+          if (obj.routerLink === name) {
+            this.changeState(obj.name)
+          }
+        }
+      }
+    }
   },
   watch: {
     // 获取设备高度
@@ -159,6 +162,12 @@ export default {
       handler (val) {
         this.screenHeight = val
         this.tabbarFlag = this.screenHeight >= this.realScreenHeight
+      },
+      immediate: true
+    },
+    '$route': {
+      handler () {
+        this.showWhich()
       },
       immediate: true
     }

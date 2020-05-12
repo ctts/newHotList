@@ -63,6 +63,7 @@ instance.interceptors.request.use(
     // 添加token
     const token = localStorage.token
     token && (config.headers.Authorization = token)
+    // console.log(token);
     return config
   },
   error => {

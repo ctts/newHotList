@@ -18,27 +18,24 @@
 
 <script>
 import { getAllHot } from '../../request/api'
-import { mediaQueries } from '../../assets/javascript/common'
+// import { mediaQueries } from '../../assets/javascript/common'
 export default {
   name: 'search',
   data () {
     return {
       logs: '',
-      searchdata: '',
-      restaurants: []
+      resultData: []
     }
   },
   mounted () {
     getAllHot().then(res => {
-      this.restaurants = res.data
-      console.log(this.restaurants)
+      this.resultData = res.data
     }).catch(err => console.log(err))
   },
   methods: {
     querySearch (queryString, callback) {
-      let restaurants = this.restaurants
-      let result = queryString ? restaurants.filter(this.createFilter(queryString)) : restaurants
-      // console.log(result)
+      let resultData = this.resultData
+      let result = queryString ? resultData.filter(this.createFilter(queryString)) : resultData
       callback(result)
     },
     createFilter (queryString) {
@@ -48,14 +45,15 @@ export default {
     },
     handleSelect (item) {
       // 打开链接
-      if (mediaQueries()) {
-        window.open(item.infoURL)
-      } else {
-        // 手机端适配
-        /* eslint-disable */
-        var embed = plus.webview.create(item.infoURL, '', { top: '49px', bottom: '49px' });
-        plus.webview.currentWebview().append(embed);
-      }
+      window.open(item.infoURL)
+      // if (mediaQueries()) {
+      //   window.open(item.infoURL)
+      // } else {
+      //   // 手机端适配
+      //   /* eslint-disable */
+      //   var embed = plus.webview.create(item.infoURL, '', { top: '49px', bottom: '49px' });
+      //   plus.webview.currentWebview().append(embed);
+      // }
     }
   }
 }
