@@ -97,7 +97,7 @@ export default {
   &:last-child {
     border-bottom: none;
   }
-  
+
   img {
     max-width: 4rem;
     margin-right: 1rem;
